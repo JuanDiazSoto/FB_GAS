@@ -108,9 +108,35 @@ Logger.log(id);
 ### 1.- envio de correo simple
   
 ```javascript
+
   const mail = 'tu_correo';
   const asunto = 'esta es un prueba';
   const mensaje = 'hola Usuario: \n este es un mensaje de prueba. \n  Atte. tu Boot'; 
   GmailApp.sendEmail(mail, asunto, mensaje);
- ``` 
   
+ ``` 
+ ### 1.- envio de correo con HTML
+ 
+ ```javascript
+
+  const mail = 'tu_correo';
+  const asunto = 'esta es un prueba';
+  const mensajeHtml = '<div style="background-color: #b119b4; padding: 20px; color: white; font-family: Arial, sans-serif;">'+ 
+                      '<div style="background-color: #b119b4; padding: 20px; color: white; font-family: Arial, sans-serif;"> +
+                      '<p style="font-size: 18px; margin: 0 0 20px;">Estimado Usuario: </p>' +
+                      '<p style="font-size: 18px; margin: 0 0 20px;">Este es un mensaje de prueba.</p>' +
+                      '<p style="font-size: 18px; margin: 0 0 20px;">Atte. tu Boot.</p>' +
+                      '</div>';
+
+
+  
+  GmailApp.sendEmail(
+          mail, 
+          asunto, 
+          '', 
+          {
+            htmlBody: message,           
+          }
+        );
+  
+ ``` 
