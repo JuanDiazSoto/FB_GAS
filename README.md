@@ -142,20 +142,20 @@ Logger.log(id);
   
  ``` 
  
- ### Adjuntar Archivo
+ ### 3.- Adjuntar Archivo
  
 ```javascript
 
-  var archivo = DriveApp.getFileById('ID_DEL_ARCHIVO'); // Reemplaza 'ID_DEL_ARCHIVO' con el ID real de tu archivo adjunto
-  var destinatario = 'correo_destino';
-  var asunto = 'Adjunto de prueba';
-  var cuerpo = '¡Hola! Adjunto te envío un archivo de prueba.';
+  const archivo = DriveApp.getFileById('ID_DEL_ARCHIVO'); // Reemplaza 'ID_DEL_ARCHIVO' con el ID real de tu archivo adjunto
+  const destinatario = 'correo_destino';
+  const asunto = 'Adjunto de prueba';
+  const cuerpo = '¡Hola! Adjunto te envío un archivo de prueba.';
   
   // Convierte el archivo a Blob
-  var blob = archivo.getBlob();
+  const blob = archivo.getBlob();
   
   // Crea el mensaje de correo
-  var mensaje = {
+  const mensaje = {
     to: destinatario,
     subject: asunto,
     body: cuerpo,
