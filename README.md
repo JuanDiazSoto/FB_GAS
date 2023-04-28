@@ -38,7 +38,7 @@ Logger.log(id);
 
 ## Como CONSUMIR API´S
 
-### 1
+### 1.- primera forma - pueden crear una api en https://www.mockable.io/a/ para pruebas.  
 
   const URL_STRING = "MI_API_URL";  
   const response = UrlFetchApp.fetch(URL_STRING);  
