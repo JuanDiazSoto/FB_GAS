@@ -40,10 +40,10 @@ Logger.log(id);
 
 ### 1
 
-  const URL_STRING = "MI_API_URL";
-  const response = UrlFetchApp.fetch(URL_STRING);
-  const json = response.getContentText();
-  const data = JSON.parse(json);
-  
-  Logger.log(data)
+  const URL_STRING = "MI_API_URL";  
+  const response = UrlFetchApp.fetch(URL_STRING);  
+  const json = response.getContentText();  
+  const data = JSON.parse(json);  
+    
+  Logger.log(data)  
   
