@@ -80,3 +80,26 @@ Logger.log(id);
     UrlFetchApp.fetch(url, options);
 ```
   
+## Leer Google DOCS - Templete
+
+```
+  const c_id_carpeta = 'mi_id_carpeta';
+  const c_id_templete = 'mi_google_docs_templete';
+  
+  const carpeta = DriveApp.getFolderById(c_id_carpeta);
+  const planilla = DriveApp.getFileById(c_id_planilla);
+
+  let copia_planilla = planilla.makeCopy();
+  const id_copia = copia_planilla.getId();
+
+  let documento_copia = DocumentApp.openById(id_copia);
+  let cuerpo_documento = documento_copia.getBody();
+
+  cuerpo_documento.replaceText("{{tag1}}", paciente.id);
+  cuerpo_documento.replaceText("{{tag2}}", paciente.apelli);
+
+  documento_copia.saveAndClose();
+  copia_planilla.setName('aqui puede agregar un nuevo nombre')
+  copia_planilla.moveTo(carpeta);
+
+```
