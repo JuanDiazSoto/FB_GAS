@@ -103,3 +103,13 @@ Logger.log(id);
   copia_planilla.moveTo(carpeta);
 
 ```
+
+## Envio de Correos
+### 1.- envio de correo simple
+  
+  const mail = 'tu_correo';
+  const asunto = 'esta es un prueba';
+  const mensaje = 'hola Usuario: \n este es un mensaje de prueba. \n  Atte. tu Boot'; 
+  GmailApp.sendEmail(mail, asunto, mensaje);
+  
+  
