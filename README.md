@@ -116,7 +116,7 @@ Logger.log(id);
   GmailApp.sendEmail(mail, asunto, mensaje);
   
  ``` 
- ### 1.- Envió de correo con HTML
+ ### 2.- Envió de correo con HTML
  
  ```javascript
 
@@ -141,3 +141,28 @@ Logger.log(id);
         );
   
  ``` 
+ 
+ ### Adjuntar Archivo
+ 
+```javascript
+
+  var archivo = DriveApp.getFileById('ID_DEL_ARCHIVO'); // Reemplaza 'ID_DEL_ARCHIVO' con el ID real de tu archivo adjunto
+  var destinatario = 'correo_destino';
+  var asunto = 'Adjunto de prueba';
+  var cuerpo = '¡Hola! Adjunto te envío un archivo de prueba.';
+  
+  // Convierte el archivo a Blob
+  var blob = archivo.getBlob();
+  
+  // Crea el mensaje de correo
+  var mensaje = {
+    to: destinatario,
+    subject: asunto,
+    body: cuerpo,
+    attachments: [blob]
+  };
+  
+  // Envía el correo
+  MailApp.sendEmail(mensaje);
+
+```
