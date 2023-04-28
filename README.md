@@ -36,3 +36,14 @@ const id = hoja.getLastRow();
   
 Logger.log(id);  
 
+## Como CONSUMIR API´S
+
+### 1
+
+  const URL_STRING = "MI_API_URL";
+  const response = UrlFetchApp.fetch(URL_STRING);
+  const json = response.getContentText();
+  const data = JSON.parse(json);
+  
+  Logger.log(data)
+  
