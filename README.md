@@ -63,5 +63,20 @@ Logger.log(id);
   Logger.log(response)
   
   ```
+### 3.- tercera forma
 
+``` 
+    
+    const url = "MI_API_URL";
+    const datos = {
+      "item1": 'id',
+      "tabla": 'tabla_interna'
+    };
+    const options = {
+      "method": "POST",
+      "contentType": "application/json",
+      "payload": JSON.stringify(datos)
+    };
+    UrlFetchApp.fetch(url, options);
+```
   
