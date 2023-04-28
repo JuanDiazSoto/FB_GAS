@@ -2,7 +2,7 @@
 
 ## Leer datos de un spreadsheet desde un google script
 
-```
+```javascript
 const c_id_libro = ''; //modificar por su id de libro 
 const c_hoja_lectura = ''; // modificar por su nombre de hoja 
 
@@ -14,7 +14,7 @@ Logger.log(datos);
 ```
 
 ## Leer datos de un spreadsheet desde un google script con filtro
-```
+```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
 const c_filtro = 'X';  
@@ -28,7 +28,7 @@ Logger.log(datos)
 ```
   
 ## Obtener cantidad de registros que tiene una hoja
-```
+```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
   
@@ -42,7 +42,7 @@ Logger.log(id);
 ## pueden crear una api en https://www.mockable.io/a/ para pruebas.  
 
 ### 1.- primera forma 
-```
+```javascript
   const URL_STRING = "MI_API_URL";  
   const response = UrlFetchApp.fetch(URL_STRING);  
   const json = response.getContentText();  
@@ -52,7 +52,7 @@ Logger.log(id);
 ``` 
 ### 2.- segunda forma
 
-```
+```javascript
  const url = 'MI_API_URL';
  const  options = {  'headers': {   
                                   'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ Logger.log(id);
   ```
 ### 3.- tercera forma
 
-``` 
+```javascript
     
     const url = "MI_API_URL";
     const datos = {
@@ -82,7 +82,7 @@ Logger.log(id);
   
 ## Leer Google DOCS - Templete
 
-```
+```javascript
   const c_id_carpeta = 'mi_id_carpeta';
   const c_id_templete = 'mi_google_docs_templete';
   
