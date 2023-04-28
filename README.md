@@ -37,8 +37,9 @@ const id = hoja.getLastRow();
 Logger.log(id);  
 
 ## Como CONSUMIR API´S
+## pueden crear una api en https://www.mockable.io/a/ para pruebas.  
 
-### 1.- primera forma - pueden crear una api en https://www.mockable.io/a/ para pruebas.  
+### 1.- primera forma 
 
   const URL_STRING = "MI_API_URL";  
   const response = UrlFetchApp.fetch(URL_STRING);  
@@ -46,4 +47,19 @@ Logger.log(id);
   const data = JSON.parse(json);  
     
   Logger.log(data)  
+  
+### 2.- segunda forma
+
+ const url = 'MI_API_URL';
+
+
+ const  options = {  
+    'headers': {   
+      'Content-Type': 'application/json'
+    }  
+  };  
+
+  const  response = UrlFetchApp.fetch(url, options)
+  Logger.log(response)
+
   
