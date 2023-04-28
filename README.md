@@ -80,7 +80,7 @@ Logger.log(id);
     UrlFetchApp.fetch(url, options);
 ```
   
-## Leer Google DOCS - Templete
+## Google DOCS - Modificar un Templete
 
 ```javascript
   const c_id_carpeta = 'mi_id_carpeta';
