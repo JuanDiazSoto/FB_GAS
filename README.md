@@ -1,6 +1,6 @@
 # SCRIPT-GAS
 
-## Leer datos de un spreadsheet desde un google script
+## Leer datos de un Spreadsheet desde un Google script
 
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro 
@@ -13,7 +13,7 @@ const datos = hoja.getDataRange().getValues();
 Logger.log(datos);  
 ```
 
-## Leer datos de un spreadsheet desde un google script con filtro
+## Leer datos de un Spreadsheet desde un Google script con filtro
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
@@ -26,8 +26,8 @@ const datos = hoja.getDataRange().getValues().filter( x => x[0] == c_filtro)
   
 Logger.log(datos)  
 ```
-  
-## Obtener cantidad de registros que tiene una hoja
+
+  ## Obtener cantidad de registros que tiene una hoja
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
@@ -41,7 +41,7 @@ Logger.log(id);
 ## Como CONSUMIR API´S
 ## pueden crear una api en https://www.mockable.io/a/ para pruebas.  
 
-### 1.- primera forma 
+### 1.- Primera forma 
 ```javascript
   const URL_STRING = "MI_API_URL";  
   const response = UrlFetchApp.fetch(URL_STRING);  
@@ -50,7 +50,7 @@ Logger.log(id);
     
   Logger.log(data)  
 ``` 
-### 2.- segunda forma
+### 2.- Segunda forma
 
 ```javascript
  const url = 'MI_API_URL';
@@ -63,7 +63,7 @@ Logger.log(id);
   Logger.log(response)
   
   ```
-### 3.- tercera forma
+### 3.- Tercera forma
 
 ```javascript
     
@@ -104,8 +104,9 @@ Logger.log(id);
 
 ```
 
-## Envio de Correos
-### 1.- envio de correo simple
+## Correos
+
+### 1.- Envió de correo simple
   
 ```javascript
 
@@ -115,7 +116,7 @@ Logger.log(id);
   GmailApp.sendEmail(mail, asunto, mensaje);
   
  ``` 
- ### 1.- envio de correo con HTML
+ ### 1.- Envió de correo con HTML
  
  ```javascript
 
