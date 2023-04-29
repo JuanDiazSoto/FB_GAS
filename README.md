@@ -167,8 +167,8 @@ Logger.log(id);
 
 ```
 
-## Leer Calendario:
-
+## Google Calendario:
+### Leer eventos de calendario
 deberan crear un calendario en google calendar, ademas en la parte de configuracion deberan buscar el id de este.
 ```javascript
 
@@ -190,4 +190,24 @@ deberan crear un calendario en google calendar, ademas en la parte de configurac
     Logger.log("-------------------");
   });
 
+```
+
+### Crear un evento de calendario
+```javascript
+ const calendarioId = 'mi_id_calendario'; // Reemplaza con el ID de tu calendario
+  
+ const calendario = CalendarApp.getCalendarById(calendarioId);
+  
+ const tituloEvento = "Título del evento";
+ const fechaInicio = new Date("2023-04-30T09:00:00"); // Fecha y hora de inicio del evento
+ const fechaFin = new Date("2023-04-30T10:30:00"); // Fecha y hora de fin del evento
+ const ubicacion = "Ubicación del evento";
+ const descripcion = "Descripción del evento";
+  
+ let evento = calendario.createEvent(tituloEvento, fechaInicio, fechaFin, {
+    location: ubicacion,
+    description: descripcion
+  });
+  
+  Logger.log("Evento creado: " + evento.getId());
 ```
