@@ -166,3 +166,28 @@ Logger.log(id);
   MailApp.sendEmail(mensaje);
 
 ```
+
+## Leer Calendario:
+
+deberan crear un calendario en google calendar, ademas en la parte de configuracion deberan buscar el id de este.
+```javascript
+
+  const id_calendario = 'mi_id_calendario';
+  const calendario = CalendarApp.getCalendarById(id_calendario);
+
+  let eventos = calendario.getEvents(new Date("2023-01-01"), new Date("2023-12-31")); // Obtén los eventos desde hoy hasta el final del año
+
+  eventos.forEach(function (evento) {
+    var titulo = evento.getTitle();
+    var fechaInicio = evento.getStartTime();
+    var fechaFin = evento.getEndTime();
+    var ubicacion = evento.getLocation();
+
+    Logger.log("Título: " + titulo);
+    Logger.log("Fecha de inicio: " + fechaInicio);
+    Logger.log("Fecha de fin: " + fechaFin);
+    Logger.log("Ubicación: " + ubicacion);
+    Logger.log("-------------------");
+  });
+
+```
