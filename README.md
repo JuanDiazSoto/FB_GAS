@@ -175,7 +175,7 @@ deberan crear un calendario en google calendar, ademas en la parte de configurac
   const id_calendario = 'mi_id_calendario';
   const calendario = CalendarApp.getCalendarById(id_calendario);
 
-  let eventos = calendario.getEvents(new Date("2023-01-01"), new Date("2023-12-31")); // Obtén los eventos desde hoy hasta el final del año
+  let eventos = calendario.getEvents(new Date("2023-01-01"), new Date("2023-12-31")); // Obtén los eventos de este año
 
   eventos.forEach(function (evento) {
     var titulo = evento.getTitle();
