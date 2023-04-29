@@ -211,3 +211,18 @@ deberan crear un calendario en google calendar, ademas en la parte de configurac
   
   Logger.log("Evento creado: " + evento.getId());
 ```
+### Cancelar evento de calendario
+```javascript
+  const eventoId = 'mi_id_evento'
+  const calendarioId = 'mi_id_calendario'; // Reemplaza con el ID de tu calendario
+  
+  const calendario = CalendarApp.getCalendarById(calendarioId);
+  const evento = calendario.getEventById(eventoId);
+  
+  if (evento) {
+    evento.deleteEvent();
+    Logger.log("Evento cancelado: " + eventoId);
+  } else {
+    Logger.log("No se encontró el evento con el ID: " + eventoId);
+  }
+  ```
