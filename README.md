@@ -169,7 +169,7 @@ Logger.log(id);
 
 
  ### 4.- Envió con Templete 
- debe crear el siguiente archivo html ejemplo templete.html
+ debe crear el siguiente archivo con el nombre : templete.html
 ```javascript
 
 <!DOCTYPE html>
@@ -207,7 +207,7 @@ Logger.log(id);
 
 </html>
 ```
-
+en el codigo.gs agregar lo siguiente
 ```javascript
 function enviarCorreos() {
   const htmlTemplate = HtmlService.createTemplateFromFile("templete");
