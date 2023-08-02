@@ -143,7 +143,7 @@ Logger.log(id);
  ``` 
  
  ### 3.- Adjuntar Archivo
- 
+
 ```javascript
 
   const archivo = DriveApp.getFileById('ID_DEL_ARCHIVO'); // Reemplaza 'ID_DEL_ARCHIVO' con el ID real de tu archivo adjunto
@@ -165,6 +165,84 @@ Logger.log(id);
   // Envía el correo
   MailApp.sendEmail(mensaje);
 
+```
+
+
+ ### 4.- Envió con Templete 
+ debe crear el siguiente archivo html ejemplo templete.html
+```javascript
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div class="container my-4">
+    <hr>
+    <p><strong>Este es un mensaje</strong></p>
+    <table style="font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%;">
+      <thead style="">
+        <tr style="background-color: #f2f2f2;">
+          <th style="border: 1px solid #ddd; padding: 8px; padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #000; color: white;">INDEX</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <?!= tabla_de_datos ?>
+      </tbody>
+    </table>
+
+    </div_prueba>
+    <p style="background-color: #faf4e0; border-color: #c2a442; padding: 10px; border-left: 6px solid; border-radius: 5px;">
+      <strong style="font-weight: 600;">
+        Nota:
+      </strong>
+      Este correo fue emitido a travez de Google Apps Script.
+    </p>
+  </div>
+</body>
+
+</html>
+```
+
+```javascript
+function enviarCorreos() {
+  const htmlTemplate = HtmlService.createTemplateFromFile("templete");
+  htmlTemplate.tabla_de_datos = construirTabla();
+  const emailBody = htmlTemplate.evaluate();
+
+  try {
+
+    MailApp.sendEmail({
+      to: 'test@test.cl',
+      subject: 'Esta es una prueba',
+      htmlBody: emailBody.getContent(),
+      cc: 'test2@test.cl'
+    })
+
+  } catch (e) {
+    Logger.log("error " + e)
+  }
+
+}
+
+function construirTabla() {
+  const tabla = "";
+  for (var i = 0; i < 9; i++) {
+    tabla =
+      tabla +
+      "<tr style='background-color: #f2f2f2'>" +
+      "<th style='padding-top: 12px; padding-bottom: 12px; text-align: left;  background-color: #f2f2f2;  color: black; border: 1px solid #ddd;'>" +
+      i +
+      "</th>" +
+      "</tr>";
+  }
+
+  return tabla;
+}
 ```
 
 ## Google Calendario:
