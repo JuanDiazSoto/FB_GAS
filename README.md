@@ -304,7 +304,8 @@ deberan crear un calendario en google calendar, ademas en la parte de configurac
     Logger.log("No se encontró el evento con el ID: " + eventoId);
   }
   ```
-### Realizar Respaldo de un Documento
+
+# Realizar Respaldo de un Documento
 
 ```javascript
 const idDocumento       = "";
