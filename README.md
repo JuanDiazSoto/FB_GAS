@@ -304,3 +304,17 @@ deberan crear un calendario en google calendar, ademas en la parte de configurac
     Logger.log("No se encontró el evento con el ID: " + eventoId);
   }
   ```
+### Realizar Respaldo de un Documento
+
+```javascript
+const idDocumento       = "";
+const idCarpetaRespaldo = "";
+
+var fecha       = Utilities.formatDate(new Date(), "GMT", "yyyy-MM-dd");
+const carpeta   = DriveApp.getFolderById(idCarpetaRespaldo);
+const plantilla = DriveApp.getFileById(idDocumento);
+const copiaPlan = plantilla.makeCopy("Backup - " + fecha + " - creado por script");
+
+ copiaPlan.moveTo(carpeta);
+
+```
