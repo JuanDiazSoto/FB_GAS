@@ -1,6 +1,6 @@
 # SCRIPT-GAS 
-
-## Leer datos de un Spreadsheet desde un Google script
+## SPREADSHEET
+### Leer datos de un Spreadsheet desde un Google script
 
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro 
@@ -13,7 +13,7 @@ const datos = hoja.getDataRange().getValues();
 Logger.log(datos);  
 ```
 
-## Leer datos de un Spreadsheet desde un Google script con filtro
+### Leer datos de un Spreadsheet desde un Google script con filtro
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
@@ -27,7 +27,7 @@ const datos = hoja.getDataRange().getValues().filter( x => x[0] == c_filtro)
 Logger.log(datos)  
 ```
 
-  ## Obtener cantidad de registros que tiene una hoja
+### Obtener cantidad de registros que tiene una hoja
 ```javascript
 const c_id_libro = ''; //modificar por su id de libro   
 const c_hoja_lectura = ''; // modificar por su nombre de hoja   
@@ -38,6 +38,26 @@ const id = hoja.getLastRow();
   
 Logger.log(id);  
 ```
+
+
+## Obtener hojas de un documento
+```javascript
+function obtenerNombresDeHojas() {
+// Obtén la hoja activa
+const hojaActiva = SpreadsheetApp.getActiveSpreadsheet();
+// Obtén todas las hojas del documento
+const hojas = hojaActiva.getSheets();
+// Crea un array para almacenar los nombres de las hojas
+const listado = []
+// Recorre todas las hojas y agrega los nombres al array
+hojas.forEach(item =>{
+listado.push(item.getName());
+})
+// También puedes devolver el array si lo necesitas en otro lugar del código
+return listado;
+}  
+```
+
 ## Como CONSUMIR API´S
 ## pueden crear una api en https://www.mockable.io/a/ para pruebas.  
 
