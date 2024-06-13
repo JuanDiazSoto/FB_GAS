@@ -1,5 +1,4 @@
 
-
 # Caso 1
 
 caso de facebook
@@ -20,3 +19,18 @@ se debe crear un spreadsheet con las siguientes hojas:
  - DATA
 
  ![imagen de hoja DATA](https://github.com/JuanDiazSoto/FB_GAS/blob/main/Casos%20Facebook/caso1/img/DATA.png)
+
+## QUE HACER
+
+1. Debe crear los botones tal como muestra en la imagen del formulario
+
+2. Debe copiar todo el documento code.gs, en menú extenciones -> APPS SCRIPT 
+
+3. debes asignar las siguientes funciones a los botones del formulario
+
+-   boton SEARCH -> getData
+-   boton CLEAR  -> clearData
+-   boton UPDATE -> updateData
+-   boton SAVE   -> saveData
+
+4. por ultimo dar acceso a ejecucion de GAS
