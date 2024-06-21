@@ -1,0 +1,82 @@
+<script>
+  const pageLoad = () =>{
+    
+    let fecha = new Date();
+    let anio = fecha.getFullYear();
+    let dia = fecha.getDate();
+    let _mes = fecha.getMonth();//viene con valores de 0 al 11
+    _mes = _mes + 1;//ahora lo tienes de 1 al 12
+    let mes ;
+    if (_mes < 10)//ahora le agregas un 0 para el formato date
+    { 
+      mes = "0" + _mes;
+    }
+    else
+    { 
+       mes = _mes.toString;
+    }
+    document.getElementById("fecha").min = anio+'-'+mes+'-'+dia; 
+  }
+
+  const valorFecha = (e) =>{
+    const fecha   = document.getElementById("fecha").value;
+    event.preventDefault();
+    google.script.run
+    .withSuccessHandler( setHoras )
+    .withFailureHandler( viewError )          
+    .getHoras( fecha );        
+  }
+
+  const setHoras = (data) =>{
+    const select = document.getElementById('hora');
+          select.innerHTML = "";
+    for(var i = 0; i < data.length; i++) {
+
+      if(i == 0){
+        let el = document.createElement("option");
+        el.textContent = "Seleccione una hora";
+        el.value = "";
+        el.disabled = true;
+        el.selected = true;
+
+        select.appendChild(el); 
+      }
+
+      let opt = data[i];
+      let el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+
+      select.appendChild(el);
+    }
+  }
+
+  const viewError = (e) =>{
+    
+    Toast.show(e, 'error');
+    
+  }
+
+  const  enviarRespuesta = (form) =>{
+
+    event.preventDefault();
+    google.script.run
+    .withSuccessHandler( agendadoExitoso ) 
+    .withFailureHandler( viewError )            
+    .saveData( form );       
+
+  }
+
+
+  const agendadoExitoso = (msn) => {
+     document.getElementById('formulario').reset();
+
+       const selectElement = document.getElementById('hora');
+             selectElement.innerHTML = '<option value="">Seleccione una hora</option>';
+
+      Toast.show(msn, 'success');
+   
+  }
+
+
+</script>
