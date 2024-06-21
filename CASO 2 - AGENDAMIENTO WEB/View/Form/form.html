@@ -1,0 +1,47 @@
+<div id="output" class="centered-div">
+  <form id="formulario" onsubmit="enviarRespuesta(this)">
+
+
+    <div class="block form-group">
+      <label for="nombre">nombre</label>
+      <input id="nombre" name="nombre" type="text" placeholder="ingrese su nombre" required/>
+    </div>
+
+    <div class="block form-group">
+      <label for="email">email</label>
+      <input id="email" name="email" type="text" placeholder="ingrese su correo" required/>
+    </div>
+
+    <div class="block form-group">
+      <label for="servicio">tipo de servicio</label>
+      <select name="servicio" id="servicio" required>
+        <option value="" disabled selected>-seleccione-</option>
+        <option value="servicio1">servicio1</option>
+        <option value="servicio2">servicio2</option>
+        <option value="servicio3">servicio3</option>
+        <option value="servicio4">servicio4</option>
+      </select>
+    </div>
+
+    <div class="block form-group">
+      <label for="fecha">Escoja una fecha </label>
+      <input id="fecha" name="fecha" type="date" onchange="valorFecha(event)" required>
+    </div>
+
+
+    <div class="block form-group">
+      <label for="hora">seleccione su hora</label>
+      <select name="hora" id="hora" required>
+         <option value="" disabled selected>Seleccione una hora</option>  
+      </select>
+    </div>
+
+
+    <br>
+    <input type="submit" id="btnEnviar" class="action" value="Enviar" />
+  </form>
+
+  <div class="toast">
+  </div>
+
+</div>
